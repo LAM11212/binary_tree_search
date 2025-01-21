@@ -2,10 +2,21 @@ public class BinarySearchTree {
 
     Node root;
 
+    /**
+     * inserts a node into a binary tree
+     * @param node
+     */
     public void insert(Node node) {
 
         root = insertHelper(root, node);
     }
+
+    /**
+     *
+     * @param root
+     * @param node
+     * @return returns the root node after adding the new node into either the left/right branch.
+     */
     private Node insertHelper(Node root, Node node) {
 
         int data = node.data;
@@ -46,6 +57,12 @@ public class BinarySearchTree {
         }
     }
 
+    /**
+     * remove takes an int and removes it from the binary tree by searching for the node. Once the node is found
+     * the successor method is called which finds a suitable node to replace the removed node with, once this is done
+     * the node is removed.
+     * @param data
+     */
     public void remove(int data) {
         if(search(data)) {
             removeHelper(root, data);
